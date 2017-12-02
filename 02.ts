@@ -1,4 +1,4 @@
-const input: string = `278	1689	250	1512	1792	1974	175	1639	235	1635	1690	1947	810	224	928	859
+const input02: string = `278	1689	250	1512	1792	1974	175	1639	235	1635	1690	1947	810	224	928	859
 160	50	55	81	68	130	145	21	211	136	119	78	174	155	149	72
 4284	185	4499	273	4750	4620	4779	4669	2333	231	416	1603	197	922	5149	2993
 120	124	104	1015	1467	110	299	320	1516	137	1473	132	1229	1329	1430	392
@@ -55,5 +55,5 @@ const rowDivSum = (arr: string[]) => {
   }
 }
 
-console.log('first part:', checksum(input, rowHLSum));
-console.log('second part:', checksum(input, rowDivSum));
+console.log('first part:', checksum(input02, rowHLSum));
+console.log('second part:', checksum(input02, rowDivSum));
