@@ -1,5 +1,6 @@
 import { input04 } from './04-input';
 
+
 const isPassphraseSecure = (passphrase: string, includeAnagrams?: boolean ): boolean => {
   const words = passphrase.split(' ');
   const dict = new Set<string>();
@@ -13,11 +14,11 @@ const isPassphraseSecure = (passphrase: string, includeAnagrams?: boolean ): boo
   return true;
 };
 
+
 const list = input04.split('\n');
 console.log('first part:', list.reduce((a, c) => {
   return isPassphraseSecure(c) ? a + 1 : a;
 }, 0));
-
 console.log('second part:', list.reduce((a, c) => {
   return isPassphraseSecure(c, true) ? a + 1 : a;
 }, 0));
