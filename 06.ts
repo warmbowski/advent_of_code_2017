@@ -1,7 +1,7 @@
 const input06 = [14, 0, 15, 12, 11, 11, 3, 5, 1, 6, 8, 4, 9, 1, 8, 4];
 
 
-const memCycleLoopDetect = (banks: number[]) => {
+const memCycleLoopDetect = (banks: number[]): [number, number] => {
   const size = banks.length;
   const memSigsDict = new Map<string, number>();
   let cycleCount = 0
@@ -13,14 +13,14 @@ const memCycleLoopDetect = (banks: number[]) => {
   return [ cycleCount, cycleCount - memSigsDict.get(banks.join(',')) ];
 }
 
-const reallocateBanks = (banks: number[]) => {
-  const size = banks.length;
+const reallocateBanks = (banks: number[]): number[] => {
   const bankToReallocate = banks.reduce((acc, cur, idx, arr) => {
     return cur > arr[acc] ? idx : acc;
   }, 0);
+
   const valueToReallocate = banks[bankToReallocate];
-  const quotient = Math.floor(valueToReallocate / size);
-  const remainder = valueToReallocate % size;
+  const quotient = Math.floor(valueToReallocate /  banks.length);
+  const remainder = valueToReallocate %  banks.length;
   banks[bankToReallocate] = 0;
 
   banks.forEach((x, i) => {
@@ -30,6 +30,7 @@ const reallocateBanks = (banks: number[]) => {
   })
   return banks;
 }
+
 
 console.log('first part:', memCycleLoopDetect(input06)[0]);
 console.log('second part:', memCycleLoopDetect(input06)[1]);

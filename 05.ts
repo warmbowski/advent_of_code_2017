@@ -15,7 +15,7 @@ const stepsToExitMaze = (input: number[], offset?: (v: number) => number): numbe
   return steps;
 }
 
-const jumpOverride = (v) => v > 2 ? v - 1 : v + 1; 
+const jumpOverride = (v: number): number => v > 2 ? v - 1 : v + 1; 
 
 
 const list = input05.split('\n');
