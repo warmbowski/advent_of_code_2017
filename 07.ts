@@ -1,5 +1,5 @@
 import { input07, test07 } from './07-input';
-import { totalmem } from 'os';
+
 
 type NodeTree = Map<string, { wt: number, calls: Set<string> }>;
 
